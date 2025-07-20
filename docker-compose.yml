@@ -2,11 +2,11 @@ services:
   n8n-dev:
     image: n8nio/n8n:1.100.1
     ports:
-      - "5679:5678" # port différent si tu veux le tester localement
+      - "5679:5678"  # Port local différent pour dev
     environment:
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=${N8N_USER}
-      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - N8N_DEFAULT_LOCALE=fr
+      - N8N_USER_MANAGEMENT_DISABLED=false
+      - N8N_AUTH_EXCLUDE_ENDPOINTS=none
       - N8N_HOST=dev.atm.pharmania.fr
       - N8N_PORT=5678
       - WEBHOOK_URL=https://dev.atm.pharmania.fr/
